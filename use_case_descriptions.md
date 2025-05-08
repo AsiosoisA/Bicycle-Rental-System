@@ -1,6 +1,6 @@
 # Use Case Description
 
-Use Case Description: 회원 가입
+## Use Case Description: 회원 가입
 
 | Actor Action                                                                                                          | System Response                                                                                                                      |
 | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -10,13 +10,13 @@ Use Case Description: 회원 가입
 | 4. 이상이 없을 시                                                                                                     |                                                                                                                                      |
 |                                                                                                                       | 5. 회원 정보를 저장하고 가입 완료 메시지를 출력한다.                                                                                 |
 
-Alternative Courses
+### Alternative Courses
 
 - A1: 입력값 유효성 검사 실패
   - 3a. “입력 항목을 확인하세요”라는 오류 메시지를 출력한다.
   - 3b. 잘못된 필드가 수정되면 2번으로 되돌아간다.
 
-Use Case Description: 회원 탈퇴
+## Use Case Description: 회원 탈퇴
 
 | Actor Action                        | System Response                                    |
 | ----------------------------------- | -------------------------------------------------- |
@@ -26,12 +26,12 @@ Use Case Description: 회원 탈퇴
 | 4. 팝업 메시지의 “확인”을 클릭한다. |                                                    |
 |                                     | 5. 회원 탈퇴 처리하고 탈퇴 완료 메시지를 출력한다. |
 
-Alternative Courses
+### Alternative Courses
 
 - A1: 팝업 메시지의 “취소”를 클릭
   - 4a. 1번으로 복귀한다.
 
-Use Case Description: 로그인
+## Use Case Description: 로그인
 
 | Actor Action                                        | System Response                                                  |
 | --------------------------------------------------- | ---------------------------------------------------------------- |
@@ -41,13 +41,13 @@ Use Case Description: 로그인
 | 4. 검증 완료 시                                     |                                                                  |
 |                                                     | 5. 로그인 성공 메시지를 출력하고, 대여소 검색 화면으로 이동한다. |
 
-Alternative Courses
+### Alternative Courses
 
 - A1: 검증 실패 (ID·비밀번호 불일치)\*\*
   - 3a. “ID 또는 비밀번호가 올바르지 않습니다” 메시지를 표시한다.
   - 3b. 재입력을 위해 2번으로 복귀한다.
 
-Use Case Description: 로그아웃
+## Use Case Description: 로그아웃
 
 | Actor Action                 | System Response                     |
 | ---------------------------- | ----------------------------------- |
@@ -55,26 +55,26 @@ Use Case Description: 로그아웃
 | 2. 로그아웃 버튼을 클릭한다. |                                     |
 |                              | 3. 로그인 화면으로 이동한다.        |
 
-Use Case Description: 전체 대여 정보 조회
+## Use Case Description: 전체 대여 정보 조회
 
 | Actor Action | System Response                                                |
 | ------------ | -------------------------------------------------------------- |
 |              | 1. 전체 대여 정보를 반납 시간 기준 최근순으로 화면에 출력한다. |
 
-Extensions
+### Extensions
 
-- After step 1 (`<<extend>>` 지역별 기준 정렬):\*\*
+- After step 1 (`<<extend>>` 지역별 기준 정렬):
   - Actor Action: 지역별 정렬 선택
   - System Response: 지역별로 정렬하여 전체 대여 정보를 갱신한 후 화면에 표시한다.
 
-Use Case Description: 단위별 최근 통계 조회
+## Use Case Description: 단위별 최근 통계 조회
 
 | Actor Action | System Response                                           |
 | ------------ | --------------------------------------------------------- |
 |              | 1. 1년 단위(기본 값)의 대여 금액 및 대여 횟수를 출력한다. |
 
-Extensions
+### Extensions
 
-- After step 3 (`<<extend>>` 단위 변경):\*\*
+- After step 1 (`<<extend>>` 단위 변경):
   - Actor Action: 조회 단위(1주일·1개월·1년) 선택
   - System Response: 선택한 단위별 통계(총 대여 금액·횟수)를 갱신하여 화면에 표시한다.

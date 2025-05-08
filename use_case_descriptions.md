@@ -35,7 +35,7 @@
 
 ### Extensions
 
-- After step 1 (`<<extend>>` 지역별 기준 정렬):
+- After step 1 (`<<extend>>` 대여소별 정렬):
   - Actor Action: 정렬 기준 변경 희망할 경우 ‘대여소별 정렬’을 선택한다.
   - System Response: 과거 대여 기록 목록을 대여소별로 정렬해 출력한다.
 - After step 1(`<<extend>>` 단위 변경):

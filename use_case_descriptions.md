@@ -1,3 +1,5 @@
+# Use Case Description
+
 
 ## Use Case Description: 회원 가입
 
@@ -140,10 +142,12 @@ Actor Action(Client) | System Response
 Actor Action(Client) | System Response
 ---|---
 &nbsp;|1.선택된 대여소에 대한 '대여소 이름, 대여소 위치, 자전거 목록'을 출력한다.
-### Extenstions
-- After step 1 (`<<extend>>` 자전거 예약 대기)
-    - Actor Action(Client): 현재 자전거가 남아있지 않은 경우, '예약 대기' 버튼 클릭한다.
-    - System Response: 예약 대기 완료 팝업이 표시가 되고, 문자 알림을 통해 예약 대기 내용을 전송한다.
+
+### Extensions
+
+- After step 1(`<<extend>>` 자전거 예약 대기 신청):
+  - Actor Action(회원): 자전거 목록 중 원하는 자전거의 대기 신청 버튼을 클릭한다.
+  - Actor Action(문자 알림 시스템): 대기 신청이 완료되었다는 문자 알림을 보낸다.
 
 ## Use Case Description: 자전거 즉시 대여
 Actor Action(Client) | System Response
@@ -164,3 +168,40 @@ Actor Action(Client) | System Response
 - After step 1 (`<<extend>>` 식당 예약 외부 시스템 연결)
     - Actor Action(Client): '식당 추천' 버튼을 클릭한다.
     - System Response: 근처 식당을 추천받아서 예약할 수 있는 외부 서비스와 연결한다.
+
+  
+## Use Case Description: 자전거 예약 대기 정보 조회/취소
+
+| Actor Action(회원)          | System Response                                                                    |
+| --------------------------- | ---------------------------------------------------------------------------------- |
+|                             | 1. 회원의 예약 대기 정보 (대여소 이름, 대여소 위치, 자전거 ID, 자전거 제품명, 자전거 유형)를 화면에 출력한다. |
+
+### Extensions
+
+- After step 1(`<<extend>>` 자전거 예약 대기 정보 취소):
+  - Actor Action: 원하는 경우 각 예약 대기에 대해 취소 버튼을 클릭한다.
+  - System Response: 취소가 완료되었다는 메시지를 출력한다.
+
+
+## Use Case Description: 대여 시간 및 요금 조회
+
+| Actor Action(회원) | System Response                                    |
+| ------------------ | -------------------------------------------------- |
+|                    | 1. 해당 자전거의 대여시간 및 요금 정보를 보여준다. |
+
+## Use Case Description: 자전거 대여 기록 조회
+
+| Actor Action(회원) | System Response                                      |
+| ------------------ | ---------------------------------------------------- |
+|                    | 1. 과거 대여 기록 목록을 날짜별로 정렬해서 출력한다. |
+
+### Extensions
+
+- After step 1 (`<<extend>>` 대여소별 정렬):
+  - Actor Action: 정렬 기준 변경 희망할 경우 ‘대여소별 정렬’을 선택한다.
+  - System Response: 과거 대여 기록 목록을 대여소별로 정렬해 출력한다.
+- After step 1(`<<extend>>` 단위 변경):
+  - Actor Action: 대여 기록 중 삭제를 희망하는 기록의 삭제 버튼을 클릭한다.
+  - System Response: 삭제 확정 여부를 물어본다.
+  - Actor Action: 삭제를 확정한다.
+  - System Response: 삭제가 완료되었다는 메시지를 출력한다.
